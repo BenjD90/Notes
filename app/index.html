@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Notes</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic"/>
+  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css"/>
+  <link rel="stylesheet" href="../bower_components/ng-mfb/mfb/dist/mfb.css"/>
+  <link rel="stylesheet" href="../bower_components/ionicons/css/ionicons.min.css"/>
+  <link rel="stylesheet" href="styles/main.css"/>
+
+  <style type="text/css">
+    /**
+     * Hide when Angular is not yet loaded and initialized
+     */
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body ng-app="Notes" layout="row" ng-cloak>
+
+
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+  >
+
+  <md-toolbar class="md-whiteframe-z1">
+    <h1>Menu</h1>
+  </md-toolbar>
+
+  <md-list ng-controller="MenuController">
+    <md-list-item>
+      <md-button ng-click="changeFilter('')">
+        ALL
+      </md-button>
+    </md-list-item>
+    <md-list-item>
+      <md-button ng-click="changeFilter('TODO')">
+        TODO
+      </md-button>
+    </md-list-item>
+    <md-list-item>
+      <md-button ng-click="changeFilter('DONE')">
+        DONE
+      </md-button>
+    </md-list-item>
+    <md-list-item>
+      V0.4
+    </md-list-item>
+  </md-list>
+
+</md-sidenav>
+
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2"
+     ng-view></div>
+
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-route/angular-route.min.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+<script type="text/javascript" src="../bower_components/angular-material/angular-material.min.js"></script>
+<script type="text/javascript" src="../bower_components/ng-mfb/src/mfb-directive.js"></script>
+<script type="text/javascript" src="../bower_components/ngstorage/ngStorage.min.js"></script>
+
+<script src="./scripts/app.js"></script>
+<script src="./scripts/directives/focus.js"></script>
+<script src="./scripts/controllers/NotesController.js"></script>
+<script src="scripts/controllers/menuController.js"></script>
+<script src="scripts/services/notesService.js"></script>
+<script src="scripts/filters/nl2brFilter.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<md-dialog aria-label="Note" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span ng-show="index != null">Editer</span><span ng-hide="index != null">Créer</span>
+      &nbsp;une note</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-font-icon="ion-close" class="ionicons" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <form name="noteForm">
+    <md-input-container>
+      <label>Titre</label>
+      <input ng-model="note.title" name="titre"/>
+    </md-input-container>
+
+    <md-input-container flex="">
+      <label>Description</label>
+      <textarea ng-model="note.description" name="description" required columns="5" rows="5"
+                focus-me="{{shouldBeOpen}}"></textarea>
+
+      <div ng-messages="noteForm.description.$error">
+        <div ng-message="required">
+          Description requise
+        </div>
+      </div>
+    </md-input-container>
+
+    <md-input-container ng-show="index != null">
+      <label>Etat</label>
+      <md-select ng-model="note.state">
+        <md-option value="TODO">TODO</md-option>
+        <md-option value="DONE">DONE</md-option>
+      </md-select>
+    </md-input-container>
+
+    <div class="md-actions" layout="row">
+      <span flex></span>
+      <md-button ng-click="answer('useful')" style="margin-right:20px;">
+        <span ng-show="index != null">Editer</span><span ng-hide="index != null">Créer</span>
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

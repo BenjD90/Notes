@@ -1,0 +1,39 @@
+<md-dialog aria-label="Note" ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{note.title}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-font-icon="ion-close" class="ionicons" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab>
+        <md-tab-label>S.C.</md-tab-label>
+        <md-tab-body>
+          <md-list>
+            <md-list-item ng-repeat="evt in note.datesStatesChanged.slice().reverse()">
+              <dd>{{evt.date | date:'dd MMM yy à HH:mm:ss'}}&nbsp;</dd>
+              <dt>&nbsp;&nbsp;&nbsp;&nbsp;{{evt.state}}&nbsp;&nbsp;&gt;&nbsp;&nbsp;{{evt.newState}}</dt>
+            </md-list-item>
+          </md-list>
+        </md-tab-body>
+      </md-tab>
+      <md-tab>
+        <md-tab-label>All</md-tab-label>
+        <md-tab-body>
+          <md-list>
+            <md-list-item ng-repeat="date in note.dates.slice().reverse()">
+              {{date | date:'dd MMM yy à HH:mm:ss'}}
+            </md-list-item>
+          </md-list>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+  </div>
+</md-dialog>
