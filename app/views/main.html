@@ -6,88 +6,93 @@
 </md-toolbar>
 
 <md-content flex id="content">
-  <md-grid-list
-    md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3"
-    md-row-height="4:3"
-    md-gutter="12px" md-gutter-gt-sm="8px">
-    <md-grid-tile
-      class="md-whiteframe-9dp"
-      ng-repeat="note in allNotes | filter:{state:filter}"
-      ng-class="note.color"
-      >
-      <md-grid-tile-header ng-show="note.title">{{note.title | uppercase}}</md-grid-tile-header>
-      <span ng-bind-html="note.description | linky | nl2br"></span>
-      <md-grid-tile-footer>
-        <section layout="row" layout-align="center center" layout-wrap>
-          <md-button ng-show="note.state != 'DONE'" ng-click="setState(note,$event, 'DONE')"
-                     class="md-fab md-mini correctPosition"
-                     aria-label="DONE">
-            &#10003;
-          </md-button>
-          <md-button ng-show="note.state != 'TODO'" ng-click="setState(note,$event, 'TODO')"
-                     class="md-fab md-mini correctPosition"
-                     aria-label="TODO">
-            &#9785;
-          </md-button>
-          <md-button ng-click="editNote(note, $event)" class="md-fab md-mini correctPosition" aria-label="Edit">
-            &#9998;
-          </md-button>
-          <md-button ng-click="detailNote(note, $event)" class="md-fab md-mini correctPosition" aria-label="More">
-            &#128269;
-          </md-button>
-          <md-button ng-click="deleteNote(note, $event)" class="md-fab md-mini correctPosition" aria-label="More">
-            -
-          </md-button>
-          <md-menu>
-            <md-button class="md-fab md-mini" style="background-color: white;"
-                       aria-label="menu" ng-mouseenter="$mdOpenMenu($event)">
+  <div sv-root sv-part="allNotes">
+    <md-grid-list
+      md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3"
+      md-row-height="4:3"
+      md-gutter="12px" md-gutter-gt-sm="8px">
+      <md-grid-tile
+        class="md-whiteframe-9dp"
+        ng-repeat="note in allNotes | filter:{state:filter}"
+        ng-class="note.color"
+        sv-element
+        >
+        <md-grid-tile-header ng-show="note.title">{{note.title | uppercase}}</md-grid-tile-header>
+        <span ng-bind-html="note.description | linky | nl2br"></span>
+        <md-grid-tile-footer>
+          <section layout="row" layout-align="center center" layout-wrap>
+            <md-button ng-show="note.state != 'DONE'" ng-click="setState(note,$event, 'DONE')"
+                       class="md-fab md-mini correctPosition"
+                       aria-label="DONE">
+              &#10003;
             </md-button>
-            <md-menu-content width="1">
-              <md-menu-item>
-                <md-button ng-click="setColor(note,$event, 'white')" class="md-fab md-mini"
-                           style="background-color: white;"
-                           aria-label="white">
-                </md-button>
-              </md-menu-item>
+            <md-button ng-show="note.state != 'TODO'" ng-click="setState(note,$event, 'TODO')"
+                       class="md-fab md-mini correctPosition"
+                       aria-label="TODO">
+              &#9785;
+            </md-button>
+            <md-button ng-click="editNote(note, $event)" class="md-fab md-mini correctPosition" aria-label="Edit">
+              &#9998;
+            </md-button>
+            <md-button ng-click="detailNote(note, $event)" class="md-fab md-mini correctPosition" aria-label="More">
+              &#128269;
+            </md-button>
+            <md-button ng-click="deleteNote(note, $event)" class="md-fab md-mini correctPosition" aria-label="More">
+              --
+            </md-button>
+            <md-menu>
+              <md-button class="md-fab md-mini" style="background-color: white;"
+                         aria-label="menu" ng-mouseenter="$mdOpenMenu($event)">
+              </md-button>
+              <md-menu-content width="1">
+                <md-menu-item>
+                  <md-button ng-click="setColor(note,$event, 'white')" class="md-fab md-mini"
+                             style="background-color: white;"
+                             aria-label="white">
+                  </md-button>
+                </md-menu-item>
 
-              <md-menu-item>
-                <md-button ng-click="setColor(note,$event, 'green')" class="md-fab md-mini"
-                           style="background-color: #8AC248;"
-                           aria-label="green">
-                </md-button>
-              </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="setColor(note,$event, 'green')" class="md-fab md-mini"
+                             style="background-color: #8AC248;"
+                             aria-label="green">
+                  </md-button>
+                </md-menu-item>
 
-              <md-menu-item>
-                <md-button ng-click="setColor(note,$event, 'yellow')" class="md-fab md-mini"
-                           style="background-color: #FFE900;"
-                           aria-label="yellow">
-                </md-button>
-              </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="setColor(note,$event, 'yellow')" class="md-fab md-mini"
+                             style="background-color: #FFE900;"
+                             aria-label="yellow">
+                  </md-button>
+                </md-menu-item>
 
-              <md-menu-item>
-                <md-button ng-click="setColor(note,$event, 'blue')" class="md-fab md-mini"
-                           style="background-color: #3FC3FF;"
-                           aria-label="blue">
-                </md-button>
-              </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="setColor(note,$event, 'blue')" class="md-fab md-mini"
+                             style="background-color: #3FC3FF;"
+                             aria-label="blue">
+                  </md-button>
+                </md-menu-item>
 
-              <md-menu-item>
-                <md-button ng-click="setColor(note,$event, 'orange')" class="md-fab md-mini"
-                           style="background-color: #FF9700;"
-                           aria-label="orange">
-                </md-button>
-              </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="setColor(note,$event, 'orange')" class="md-fab md-mini"
+                             style="background-color: #FF9700;"
+                             aria-label="orange">
+                  </md-button>
+                </md-menu-item>
 
-              <md-menu-item>
-                <md-button ng-click="setColor(note,$event, 'red')" class="md-fab md-mini"
-                           style="background-color: #FF6634;"
-                           aria-label="red">
-                </md-button>
-              </md-menu-item>
-          </md-menu>
-        </section>
-      </md-grid-tile-footer>
-    </md-grid-tile>
+                <md-menu-item>
+                  <md-button ng-click="setColor(note,$event, 'red')" class="md-fab md-mini"
+                             style="background-color: #FF6634;"
+                             aria-label="red">
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </section>
+        </md-grid-tile-footer>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
 </md-content>
 <nav mfb-menu position="br" effect="zoomin" label="Créer une note"
      active-icon="ion-plus" resting-icon="ion-plus-round"
