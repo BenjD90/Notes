@@ -8,7 +8,7 @@
 <md-content flex id="content">
   <div gridster>
     <ul>
-      <li gridster-item="note" ng-repeat="note in allNotes | filter:{state:filter}" ng-class="note.color">
+      <li gridster-item="note" ng-repeat="note in allNotes | filter:{state:filter}" ng-class="note.color" class="md-whiteframe-8dp">
         <section layout="row" layout-align="center center" layout-wrap class="noteMenu">
           <span style="">{{note.title | uppercase}}</span>
           <span>
