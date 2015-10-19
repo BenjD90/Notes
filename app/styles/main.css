@@ -128,7 +128,8 @@ span.name {
 md-fab-speed-dial {
   text-align: -webkit-right;
 }
-md-grid-tile {
+
+#content > div > ul > li {
   overflow-y: auto;
 }
 
@@ -191,7 +192,28 @@ md-menu-item {
   background-color: #FF6634;
 }
 
-.correctPosition {
-  padding-left: 3px;
-  padding-top: 1px;
+.noteMenu {
+  justify-content: space-between;
+}
+
+.noteMenu>span:first-child {
+  font-weight: bold;
+}
+
+.noteMenu>span>.md-button {
+  padding: 2px;
+  margin: 0px;
+  height : inherit;
+  min-height: inherit;
+  min-width: inherit;
+  width: inherit;
+  line-height: inherit;
+}
+
+.noteMenu .md-button.md-fab.md-mini {
+  height : 12px;
+  min-height: 12px;
+  min-width: 10px;
+  width: 10px;
+  line-height: 10px;
 }

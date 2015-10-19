@@ -83,6 +83,10 @@
         note.color = newColor;
         $notesService.editNote(index, note);
       };
+
+      $scope.$watch('allNotes', function(item){
+
+      }, true);
     });
 
   function showMessage($mdToast, message) {

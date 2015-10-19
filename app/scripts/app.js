@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('Notes', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ng-mfb', 'ngStorage', 'angular-sortable-view'])
+  .module('Notes', ['ngRoute', 'ngSanitize', 'ngMaterial', 'ng-mfb', 'ngStorage', 'gridster'])
   .config(function ($routeProvider, $locationProvider, $mdThemingProvider, $mdIconProvider) {
     $routeProvider
       .when('/', {
