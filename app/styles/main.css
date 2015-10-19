@@ -137,7 +137,7 @@ md-fab-speed-dial {
   margin-left: 5px;
 }
 
-#content > div > ul > li > span {
+#content > div > ul > li > div {
   margin-left: 5px;
   padding-right: 2px;
 }
