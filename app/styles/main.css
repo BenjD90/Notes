@@ -133,6 +133,15 @@ md-fab-speed-dial {
   overflow-y: auto;
 }
 
+#content > div > ul > li > section > span {
+  margin-left: 5px;
+}
+
+#content > div > ul > li > span {
+  margin-left: 5px;
+  padding-right: 2px;
+}
+
 md-grid-tile-header {
   padding: 2px;
 }
