@@ -1,4 +1,4 @@
-# notes
+# Notes
 
 A simple note application.
 This application doesn't use a server, all your notes are created in the app and stored in your browser LocalStorage to avoid any firewall/proxy matter.
