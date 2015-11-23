@@ -1,12 +1,16 @@
 # notes
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+A simple note application.
+This application doesn't use a server, all your notes are created in the app and stored in your browser LocalStorage to avoid any firewall/proxy matter.
+
+Usage of AngularJS and Angular Material :
+  https://angularjs.org/
+  https://material.angularjs.org/latest/
 
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
 
-## Testing
+## Compatibility
 
-Running `grunt test` will run the unit tests with karma.
+Tested on Chrome 45 and 47
