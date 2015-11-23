@@ -7,6 +7,11 @@ Usage of AngularJS and Angular Material :
   https://angularjs.org/
   https://material.angularjs.org/latest/
 
+## Demo
+
+Online demo :
+  https://bnotes.firebaseapp.com/
+
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
